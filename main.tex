@@ -69,7 +69,7 @@ O polinômio a seguir:
 	\end{equation}
 \end{centering}
 
-é chamado de "polinômio de Taylor de grau $n$ para $f$ em $a$",
+é chamado de polinômio de Taylor de grau $n$ para $f$ em $a$,
 onde $a_k = \frac{f^{(k)}(a)}{k!}$, com $0 \leq k \leq n$.
 
 Apesar da obtenção do Polinômio de Taylor parecer complicada, para funções como
@@ -140,8 +140,8 @@ Ou seja, basta analisar a paridade de $n$ e o sinal de $f^{(n)}(a)$, já que $f^
 formato geral já conhecido. Sendo assim:
 
 \begin{itemize}
-	\item se $n$ é par $f^{(n)}(a)$ e $>0$, então $a$ é um mínimo local.
-	\item se $n$ é par $f^{(n)}(a)$ e $<0$, então $a$ é um máximo local.
+	\item se $n$ é par e $f^{(n)}(a)$ $>0$, então $a$ é um mínimo local.
+	\item se $n$ é par e $f^{(n)}(a)$ e $<0$, então $a$ é um máximo local.
 	\item se $n$ é impar, então $a$ não é nem máximo, nem mínimo.
 \end{itemize}
 
@@ -150,7 +150,7 @@ derivadas para obter informações de uma função em seus pontos criticos. Embo
 ferramente dê conta de diversas funções, caso uma função tenha $f^{(n)}(a) = 0$ $ \forall n$
 não ganhamos nenhum poder de conclusão neste momento.
 
-Através deste teorema, também podemos introduzir o conceito de "ordem de igualdade",
+Através deste teorema, também podemos introduzir o conceito de ordem de igualdade,
 ou seja, o que são duas funções \textit{iguais até ordem n}.
 
 Duas funções são iguais até ordem $n$ se
@@ -159,13 +159,77 @@ Duas funções são iguais até ordem $n$ se
 	\lim_{x \to a }\frac{f(x) - g(x)}{(x-a)^n} = 0
 \end{equation}
 
-Utilizando este conceito, podemos através do teorema 3, concluir que o polinômio é o unico
-polinômio que tem a propriedade de aproximar tão bem uma determinada função. Primeiro,
-introduzindo o teorema 3, se $P$ e $Q$ são dois polinômios em (x-a) de grau $\leq n$ e $P$
+Utilizando este conceito, podemos agora apresentar o teorema 3:
+
+O teorema 3 diz que se $P$ e $Q$ são dois polinômios em (x-a) de grau $\leq n$ e $P$
 e $Q$ são iguais até ordem $n$, então $P=Q$.
+
+Aplicando este teorema, podemos concluir que se $f(x)$ é $n$ vezes
+diferenciável e $P$ é um polinômio de ordem $\leq n$ em $(x-a)$, então $P = P_{n,a}$, mostrando
+que este é o unico polinômio que é igual até ordem n em relação a uma função $f(x)$. Ou seja,
+mostramos que o polinômio de Taylor é o unico
+polinômio de grau $\leq n $ que tem a propriedade de aproximar tão bem uma determinada função.
+
+Através deste teorema, o Spivak constroi a noção de resto aplicando ele a função
+$arctan(x)$. Este resto é denotado por $R_{n,a}(x)$ e:
+
+\begin{equation}
+	f(x) = P_{n,a} + R_{n,a}
+\end{equation}
+
+O que faz sentido, jã que se estamos aproximando $f(x)$ por um polinômio, e quanto mais aumentamos
+o grau deste mais próximo chegamos de $f(x)$, deve haver uma maneira de expressar o erro
+que obtemos ao utilizar esta aproximação. Uma das maneiras de se expressar este resto é considerando
+primeiramente o que ocorre para o polinômio de grau $0$,
+
+\begin{align}
+	f(x) = P_{0,a} + R_{0,a} \\
+	f(x) = f(a) + R_{0,a}    \\
+	R_{0,a} = f(x) - f(a)
+\end{align}
+
+Ou seja:
+
+\begin{equation}
+	R_{0,a} = \int_{a}^{x} f'(y)dy
+\end{equation}
+
+Extrapolando por indução obtemos:
+
+\begin{equation}
+	R_{n,a} = \int_{a}^{x} \frac{f^{(n+1)}(y)}{n!}(x-y)^n dy
+\end{equation}
+
+E agora temos uma maneira de calcular o resto para uma função $f(x)$ qualquer. Ou seja,
+podemos calcular um valor para $f(b)$ com uma precisão desejada, bastando calcular o resto para que
+este seja menor do que a precisão desejada, e assim, sabendo qual o grau necessário para o
+polinômio.
+
+Outras expressões para o resto surgem a partir do teorema de Taylor:
+
+Supondo que $f',...,f^{(n+1)}$ estão definidas em $[a,x]$ e que $R_{n,a}(x)$ está definido por:
+
+\begin{equation}
+	f(x) = f(a) + f'(a)(x-a) + .... + \frac{f^{(n)}(a)}{n!} + R_{n,a}
+\end{equation}
+
+Então:
+
+\begin{itemize}
+	\item $R_{n,a}(x) = \frac{f^{(n+1)}(t)}{n!}(x-t)^n (x-a)$
+	\item $R_{n,a}(x) = \frac{f^{(n+1)}(t)}{(n + 1)!}(x-a)^{n+1}$
+\end{itemize}
+
+Considerando que já foi provado que $\frac{x^n}{n!} \leq \epsilon$, portanto, fazendo $n$ ser
+suficientemente grande, podemos calcular o valor de $f(x)$ com a precisão desejada.
 
 \newpage
 \section{Sequências Infinitas}
+
+Inicialmente, o Spivak define uma sequência inifita de números reais como sendo uma função
+cujo dominio é $\mathbf{N}$. Em seguida, define também o que significa dizer que uma sequência
+infinita converge.
+
 \newpage
 
 \section{Séries Infinitas}
