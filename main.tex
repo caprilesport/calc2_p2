@@ -1,0 +1,176 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multicol,lipsum}
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage}
+	\begin{center}
+
+		%\begin{figure}[!ht]
+		%\centering
+		%\includegraphics[width=2cm]{c:/ufba.jpg}
+		%\end{figure}
+
+		\Huge{Universidade Federal de Santa Catarina}\\
+		\large{Departamento de Matemática}\\
+		\vspace{15pt}
+		\vspace{95pt}
+		\textbf{\LARGE{Prova 2 - H-Calculo II }}\\
+		%\title{{\large{Título}}}
+		\vspace{3,5cm}
+	\end{center}
+
+	\begin{flushleft}
+		\begin{tabbing}
+			Aluno:  Vinícius Capriles Port\\
+			Professor: Marianna Ravara Vago\\
+		\end{tabbing}
+	\end{flushleft}
+	\vspace{1cm}
+
+	\begin{center}
+		\vspace{\fill}
+		mês\\
+		ano
+	\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % % % % % % % %FOLHA DE ROSTO % % % % % % % % % %
+
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Aproximação por funções polinomiais}
+
+Embora tenhamos um conjunto de funções elementares, muitas delas são difíceis de calcular,
+como, por exemplo, $e^x$, $log(x)$, $sen(x)$ e $cos(x)$. Em contraste,
+as funções polinomiais são muito mais simples de serem computadas.
+Assim, se houver uma forma de aproximar uma função qualquer $f(x)$ por uma função polinomial,
+poderemos então calcular os valores desta função para uma gama muito maior de valores.
+
+O polinômio a seguir:
+
+\begin{centering}
+	\begin{equation}
+		P_{n,a}(x) = a_0 + a_1(x-a) + a_2(x-a) + ... + a_n(x-a)
+	\end{equation}
+\end{centering}
+
+é chamado de "polinômio de Taylor de grau $n$ para $f$ em $a$",
+onde $a_k = \frac{f^{(k)}(a)}{k!}$, com $0 \leq k \leq n$.
+
+Apesar da obtenção do Polinômio de Taylor parecer complicada, para funções como
+$e^x$, $sin(x)$ e $cos(x)$ é surpreendentemente simples obtê-lo, já que suas derivadas são facilmente obtidas.
+
+Por exemplo, uma vez que a função $e^x$ possui como k-ésima derivada $f^{k} = e^x$, seu
+polinômio de Taylor de grau n centrado em 0 é:
+
+\begin{centering}
+	\begin{equation}
+		P_{n,a,e^x}(x) = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ...  + \frac{x^n}{n!}
+	\end{equation}
+\end{centering}
+
+Já para função logaritmica, uma vez que esta não está definida para $x = 0$, pode-se obter o
+polinômio de Taylor para a função $f(x) = log(1+x)$, para então se obter um polinômio que
+está novamente centrado em $0$ e portanto tem como elements $(x-a)^n = x^n$.
+
+Embora ainda não saibamos qual a exata conexão entre o polinômio de Taylor de uma função $f(x)$,
+já podemos perceber que ele é muito util para se obter uma aproximação para $f(x)$.
+
+Ao se analisar o polinômio de Taylor de grau 1 para uma função qualquer,
+
+\begin{centering}
+	\begin{align}
+		P_{1,a}(x) = f(a) + f'(a)(x-a) \\
+		\frac{f(x) - P_{1,a}(x)}{x-a} = \frac{f(x) - f(a)}{x-a} - f'(a)
+	\end{align}
+\end{centering}
+
+Como a razão $\frac{f(x) - f(a)}{x-a}$ é a propria definição de derivada, temos que a primeira
+razão é igual a $0$, o que indica que $P_{1,a}$ se aproxima de $f(x)$ mais rápido do que $x$
+se aproxima de $a$. Este resultado pode ser extendido para um polinômio de grau $n$, que é
+apresentado no teorema 1 deste capitulo, que diz que
+
+\begin{equation}
+	\lim_{x \to a } \frac{f(x) - P_{n,a}(x)}{(x-a)^n}
+\end{equation}
+
+e assim, começamos a revelar a relação que um polinômio desta forma tem com uma
+função genérica.
+
+Uma das consequencias do teorema 1 é fornecer uma maneira de se analisar os pontos de
+máximo e minimo para uma função. Como ja sabiamos, se $a$ é um ponto critico e $f''(a)$ existe,
+e é $ < 0$, temos que este é um ponto de mínimo local, já quando $f''(a)$ é $ > 0$ se trata de um ponto
+de máximo local. Agora, caso $f''(a) = 0$, podemos começar a analisar $f'''(a)$, ou,
+de uma maneira mais abrangente, tentar entender o que ocorre quando
+
+\begin{equation}
+	f''(a) = f'''(a) = .... = f^{(n-1)} = 0
+\end{equation}
+
+e
+
+\begin{equation}
+	f^{(n)} \neq 0
+\end{equation}
+
+Como todas as derivadas de ordem $ < n $ são $=0$, temos que o polinômio de taylor para
+esta função será
+
+\begin{equation}
+	P_{n,a} = a_n(x-a) = \frac{f^{(n)}(a)(x-a)^n}{n!}
+\end{equation}
+
+Ou seja, basta analisar a paridade de $n$ e o sinal de $f^{(n)}(a)$, já que $f^{(n)}(a)$
+é uma constante e $(x-a)^n$ pode ser analisado como qualquer polinômio, tendo seu
+formato geral já conhecido. Sendo assim:
+
+\begin{itemize}
+	\item se $n$ é par $f^{(n)}(a)$ e $>0$, então $a$ é um mínimo local.
+	\item se $n$ é par $f^{(n)}(a)$ e $<0$, então $a$ é um máximo local.
+	\item se $n$ é impar, então $a$ não é nem máximo, nem mínimo.
+\end{itemize}
+
+Assim, este desenvolvimento dos Polinômios de Taylor conseguiu complementar o teste das
+derivadas para obter informações de uma função em seus pontos criticos. Embora esta
+ferramente dê conta de diversas funções, caso uma função tenha $f^{(n)}(a) = 0$ $ \forall n$
+não ganhamos nenhum poder de conclusão neste momento.
+
+Através deste teorema, também podemos introduzir o conceito de "ordem de igualdade",
+ou seja, o que são duas funções \textit{iguais até ordem n}.
+
+Duas funções são iguais até ordem $n$ se
+
+\begin{equation}
+	\lim_{x \to a }\frac{f(x) - g(x)}{(x-a)^n} = 0
+\end{equation}
+
+Utilizando este conceito, podemos através do teorema 3, concluir que o polinômio é o unico
+polinômio que tem a propriedade de aproximar tão bem uma determinada função. Primeiro,
+introduzindo o teorema 3, se $P$ e $Q$ são dois polinômios em (x-a) de grau $\leq n$ e $P$
+e $Q$ são iguais até ordem $n$, então $P=Q$.
+
+\newpage
+\section{Sequências Infinitas}
+\newpage
+
+\section{Séries Infinitas}
+
+\newpage
+\section{Convergência uniforme e séries de potência}
+
+\end{document}
