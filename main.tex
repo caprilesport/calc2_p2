@@ -22,7 +22,7 @@
 		\large{Departamento de Matemática}\\
 		\vspace{15pt}
 		\vspace{95pt}
-		\textbf{\LARGE{Prova 2 - H-Calculo II }}\\
+		\textbf{\LARGE{Prova 2 e Lista de exercícios - H-Calculo II }}\\
 		%\title{{\large{Título}}}
 		\vspace{3,5cm}
 	\end{center}
@@ -37,8 +37,8 @@
 
 	\begin{center}
 		\vspace{\fill}
-		mês\\
-		ano
+		Dezembro\\
+		2022
 	\end{center}
 \end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,21 +220,145 @@ Então:
 	\item $R_{n,a}(x) = \frac{f^{(n+1)}(t)}{(n + 1)!}(x-a)^{n+1}$
 \end{itemize}
 
-Considerando que já foi provado que $\frac{x^n}{n!} \leq \epsilon$, portanto, fazendo $n$ ser
-suficientemente grande, podemos calcular o valor de $f(x)$ com a precisão desejada.
+Considerando que $\frac{x^n}{n!} \leq \epsilon$ para algum n suficientemente
+grande podemos, portanto, calcular o valor de $f(x)$ com a precisão desejada. 
+
+Isto é muito interessante devido a aplicação direta deste resultado, com uma maneira
+de se calcular $R_{n,a}(x)$, pode-se aplicar isto a métodos numéricos e então
+implementar o cálculo de diversas funções com a precisão desejada, o que com certeza
+é muito aplicado em calculadores, linguagens de programação entre outros domnínios
+para se ter um tipo de rotina que obtem valores precisos para $log(x)$, $e^x$ entre
+outras funções comumente encontradas em diferentes domínios científicos.
+
 
 \newpage
+
 \section{Sequências Infinitas}
+
+Agora que temos uma maneira de gerar sequências infinitas (uma vez que elas surgem
+naturalmente a partir dos polinômios de Taylor) podemos então nos aprofundar nos
+estudos deste tipo de objeto.
 
 Inicialmente, o Spivak define uma sequência inifita de números reais como sendo uma função
 cujo dominio é $\mathbf{N}$. Em seguida, define também o que significa dizer que uma sequência
 infinita converge.
 
+A definição de convergência para sequências infinitas é análoga a definição fornecida
+para um limite com ${x \to \infty}$:
+
+``Uma sequência \{$a_n$\} \textbf{converge para $l$} ($ \lim_{n \to \infty} a_n = l $) ''  se para cada
+$\epsilon > 0$ existe um número natural $N$ tal que, $\forall n$ se , 
+
+\begin{equation}
+	n > N \to |a_n - l| < \epsilon 
+\end{equation}
+
+onde uma sequência converge se ela se aproxima de $l$ para algum $l$ qualquer, e diverge
+caso contrário.
+
+Após estas definições e alguns exemplos de como analisar se algumas sequências convergem
+(como a sequência $\{\sqrt{n+1} - \sqrt{n}\}$), bem como a análise de algumas propriedades 
+de soma, multiplicação e divisão de sequências
+que assim como em limites que $\to \infty$ são verdadeiras, devido a similaridade entre
+estas sequências e limites tendendo a infinito.
+
+Esta similaridade não é mero acaso (teorema 2), existe uma conexão entre uma funcão $f(x)$ que
+satisfaz
+
+\begin{equation}
+	\lim_{x \to c} f(x) = l
+\end{equation}
+
+e uma sequência convergente estar contida dentro do domínio de $f(x)$ tal que
+	
+\begin{equation}
+	\lim_{n \to \infty} f(a_n) = l
+\end{equation}
+
+que, honestamente, me parece meio redundante, uma vez que já preciso ter a informação
+da convergência de $\{a_n\}$ para usar deste teorema. Apesar disso, parece que isso facilita a 
+obtenção de novas séries, uma vez que podemos aplicar uma série convergente a diversas
+funções e com isso obter novas séries.
+
+Após a explicação deste teorema, o Spivak passa a definir um critério que é de fundamental 
+importância daqui pra frente, e que também apresenta uma analogia com conceitos de 
+funções já estudadas anteriormente na matéria. 
+
+Assim como para funções definimos os conceitas de função crescente (se $a_{n+1} > a_n \forall n$),
+não-decresente (se $a_{n+1} \geq a_n \forall n$) e limitada por cima (se existe um $M$ t.q.
+$a_n \leq M \forall n$), podemos também definir estes conceitas para sequências.
+
+Uma das grandes utilidades destes conceitas se materializa no teorema 2, que diz que:
+
+\begin{itemize}
+	\item Se $\{a_n\}$ é não-decrescente
+	\item Se $\{a_n\}$ é limitada por cima
+\end{itemize}
+
+então $\{a_n\}$ converge.
+
+Como comentado pelo Spivak, apesar de que este teorema parece de certa forma pouco poderoso,
+uma vez que necessita da hipótese de que $\{a_n\}$ é limitada e não-decrescente, se
+aplicando a poucas sequências, ele é de uma grande utilidade após se tomar conhecimento
+do lema apresentado. Este lema diz que é sempre possível extrair uma subsequência de 
+uma sequência t.q. a subsequência seja não-decrescente ou não-crescente.
+
+Após estas definições, é definido o que é uma sequência de Cauchy:
+
+Se para cada $\epsilon > 0$ existe um numero natural $N$ t.q. $\forall m,n$:
+
+\begin{equation}
+	se\  m,n > N \to |a_n - a_m| < \epsilon
+\end{equation}
+
+Onde esta definição nos leva ao teorema 3, que prova que se uma sequência $\{a_n\}$ é uma 
+sequência de Cauchy, então esta sequência é convergente.
+
+Assim, ao final deste capítulo foram introduzidos alguns conceitos importantes acerca 
+de sequências, que faz que com que agora tenhamos a base para trabalhar com séries,
+ou seja, a soma destas consequências.
+
 \newpage
+
 
 \section{Séries Infinitas}
 
+
+
+
+
+
 \newpage
 \section{Convergência uniforme e séries de potência}
+
+\newpage
+
+\section{Exercicios Cap. 20}
+
+1 - IV
+
+10 - (a)
+
+
+(b)
+
+13
+
+\newpage
+\section{Exercicios Cap. 22}
+
+1 (iv), 4, 20
+
+\newpage
+
+\section{Exercicios Cap. 23}
+
+1 (ii, iv, viii, xx), 15
+
+\newpage
+
+\section{Exercicios Cap. 24}
+
+4, 6, 14
 
 \end{document}
