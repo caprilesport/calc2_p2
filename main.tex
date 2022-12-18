@@ -65,7 +65,7 @@ O polinômio a seguir:
 
 \begin{centering}
 	\begin{equation}
-		P_{n,a}(x) = a_0 + a_1(x-a) + a_2(x-a) + ... + a_n(x-a)
+		\nonumber P_{n,a}(x) = a_0 + a_1(x-a) + a_2(x-a) + ... + a_n(x-a)
 	\end{equation}
 \end{centering}
 
@@ -80,7 +80,7 @@ polinômio de Taylor de grau n centrado em 0 é:
 
 \begin{centering}
 	\begin{equation}
-		P_{n,a,e^x}(x) = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ...  + \frac{x^n}{n!}
+		\nonumber P_{n,a,e^x}(x) = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ...  + \frac{x^n}{n!}
 	\end{equation}
 \end{centering}
 
@@ -94,10 +94,10 @@ já podemos perceber que ele é muito util para se obter uma aproximação para 
 Ao se analisar o polinômio de Taylor de grau 1 para uma função qualquer,
 
 \begin{centering}
-	\begin{align}
+	\begin{align*}
 		P_{1,a}(x) = f(a) + f'(a)(x-a) \\
 		\frac{f(x) - P_{1,a}(x)}{x-a} = \frac{f(x) - f(a)}{x-a} - f'(a)
-	\end{align}
+	\end{align*}
 \end{centering}
 
 Como a razão $\frac{f(x) - f(a)}{x-a}$ é a propria definição de derivada, temos que a primeira
@@ -106,7 +106,7 @@ se aproxima de $a$. Este resultado pode ser extendido para um polinômio de grau
 apresentado no teorema 1 deste capitulo, que diz que
 
 \begin{equation}
-	\lim_{x \to a } \frac{f(x) - P_{n,a}(x)}{(x-a)^n}
+	\nonumber \lim_{x \to a } \frac{f(x) - P_{n,a}(x)}{(x-a)^n}
 \end{equation}
 
 e assim, começamos a revelar a relação que um polinômio desta forma tem com uma
@@ -119,20 +119,20 @@ de máximo local. Agora, caso $f''(a) = 0$, podemos começar a analisar $f'''(a)
 de uma maneira mais abrangente, tentar entender o que ocorre quando
 
 \begin{equation}
-	f''(a) = f'''(a) = .... = f^{(n-1)} = 0
+	\nonumber f''(a) = f'''(a) = .... = f^{(n-1)} = 0
 \end{equation}
 
 e
 
 \begin{equation}
-	f^{(n)} \neq 0
+	\nonumber f^{(n)} \neq 0
 \end{equation}
 
 Como todas as derivadas de ordem $ < n $ são $=0$, temos que o polinômio de taylor para
 esta função será
 
 \begin{equation}
-	P_{n,a} = a_n(x-a) = \frac{f^{(n)}(a)(x-a)^n}{n!}
+	\nonumber P_{n,a} = a_n(x-a) = \frac{f^{(n)}(a)(x-a)^n}{n!}
 \end{equation}
 
 Ou seja, basta analisar a paridade de $n$ e o sinal de $f^{(n)}(a)$, já que $f^{(n)}(a)$
@@ -156,7 +156,7 @@ ou seja, o que são duas funções \textit{iguais até ordem n}.
 Duas funções são iguais até ordem $n$ se
 
 \begin{equation}
-	\lim_{x \to a }\frac{f(x) - g(x)}{(x-a)^n} = 0
+	\nonumber \lim_{x \to a }\frac{f(x) - g(x)}{(x-a)^n} = 0
 \end{equation}
 
 Utilizando este conceito, podemos agora apresentar o teorema 3:
@@ -174,7 +174,7 @@ Através deste teorema, o Spivak constroi a noção de resto aplicando ele a fun
 $arctan(x)$. Este resto é denotado por $R_{n,a}(x)$ e:
 
 \begin{equation}
-	f(x) = P_{n,a} + R_{n,a}
+	\nonumber f(x) = P_{n,a} + R_{n,a}
 \end{equation}
 
 O que faz sentido, jã que se estamos aproximando $f(x)$ por um polinômio, e quanto mais aumentamos
@@ -182,22 +182,22 @@ o grau deste mais próximo chegamos de $f(x)$, deve haver uma maneira de express
 que obtemos ao utilizar esta aproximação. Uma das maneiras de se expressar este resto é considerando
 primeiramente o que ocorre para o polinômio de grau $0$,
 
-\begin{align}
+\begin{align*}
 	f(x) = P_{0,a} + R_{0,a} \\
 	f(x) = f(a) + R_{0,a}    \\
 	R_{0,a} = f(x) - f(a)
-\end{align}
+\end{align*}
 
 Ou seja:
 
 \begin{equation}
-	R_{0,a} = \int_{a}^{x} f'(y)dy
+	\nonumber R_{0,a} = \int_{a}^{x} f'(y)dy
 \end{equation}
 
 Extrapolando por indução obtemos:
 
 \begin{equation}
-	R_{n,a} = \int_{a}^{x} \frac{f^{(n+1)}(y)}{n!}(x-y)^n dy
+	\nonumber R_{n,a} = \int_{a}^{x} \frac{f^{(n+1)}(y)}{n!}(x-y)^n dy
 \end{equation}
 
 E agora temos uma maneira de calcular o resto para uma função $f(x)$ qualquer. Ou seja,
@@ -210,7 +210,7 @@ Outras expressões para o resto surgem a partir do teorema de Taylor:
 Supondo que $f',...,f^{(n+1)}$ estão definidas em $[a,x]$ e que $R_{n,a}(x)$ está definido por:
 
 \begin{equation}
-	f(x) = f(a) + f'(a)(x-a) + .... + \frac{f^{(n)}(a)}{n!} + R_{n,a}
+	\nonumber f(x) = f(a) + f'(a)(x-a) + .... + \frac{f^{(n)}(a)}{n!} + R_{n,a}
 \end{equation}
 
 Então:
@@ -250,7 +250,7 @@ para um limite com ${x \to \infty}$:
 $\epsilon > 0$ existe um número natural $N$ tal que, $\forall n$ se , 
 
 \begin{equation}
-	n > N \to |a_n - l| < \epsilon 
+	\nonumber n > N \to |a_n - l| < \epsilon 
 \end{equation}
 
 onde uma sequência converge se ela se aproxima de $l$ para algum $l$ qualquer, e diverge
@@ -266,13 +266,13 @@ Esta similaridade não é mero acaso (teorema 2), existe uma conexão entre uma 
 satisfaz
 
 \begin{equation}
-	\lim_{x \to c} f(x) = l
+	\nonumber \lim_{x \to c} f(x) = l
 \end{equation}
 
 e uma sequência convergente estar contida dentro do domínio de $f(x)$ tal que
 	
 \begin{equation}
-	\lim_{n \to \infty} f(a_n) = l
+	\nonumber \lim_{n \to \infty} f(a_n) = l
 \end{equation}
 
 que, honestamente, me parece meio redundante, uma vez que já preciso ter a informação
@@ -308,7 +308,7 @@ Após estas definições, é definido o que é uma sequência de Cauchy:
 Se para cada $\epsilon > 0$ existe um numero natural $N$ t.q. $\forall m,n$:
 
 \begin{equation}
-	se\  m,n > N \to |a_n - a_m| < \epsilon
+	\nonumber se\  m,n > N \to |a_n - a_m| < \epsilon
 \end{equation}
 
 Onde esta definição nos leva ao teorema 3, que prova que se uma sequência $\{a_n\}$ é uma 
@@ -323,13 +323,254 @@ ou seja, a soma destas consequências.
 
 \section{Séries Infinitas}
 
+No inicio do capítulo, iniciamos definindo o que é uma série infinita, sendo que toda a base
+que necessitavamos para definir isso foi obtida no capítulo passado. Olhando para as sequências
+anteriormente definidas, a definição de um série infinita vem naturalmente, uma vez que
+somando todos os elementos de uma sequência, chegariamos a uma série.
+
+É claro, como nem toda sequência era convergente, também temos problemas com as séries, sendo que
+nem toda série é \textbf{somável}. Como por exemplo, a série definida por:
+
+\begin{equation}
+	\nonumber a_n = (-1)^{n+1}
+\end{equation}
+
+Tendo como série (análisando as somas parciais):
+
+\begin{align*}
+	s_1 = a_1 = 1\\
+	s_2 = a_1 + a_2 = 0\\
+	s_3 = a_1 + a_2 + a_3 = 1\\
+	...
+\end{align*}
+
+Para computarmos a soma de uma série, faz sentido olharmos o que ocorre para a soma parcial
+$\{s_n\}$, assim como fizemos para o exemplo acimadefinida da seguinte maneira:
+
+\begin{equation}
+	\nonumber s_n = \sum_{i=1}^{n} a_i
+\end{equation}
+
+Onde a nossa série converge e é chamada de \textbf{somável} se a sequência $\{s_n\}$ converge.
+Ou seja, se $\lim_{n \to \infty} s_n $ está definido, sendo este valor chamado de soma de sequência.
+
+Após esta definição, começamos pelo critério de Cauchy, que como comentado pelo Spivak
+náo é muito útil para demonstrações, entretanto este é de fundamental importância teórica.
+
+O critério de Cauchy diz que, uma sequência $\{a_n\}$ é somável se e somente se,
+
+\begin{equation}
+	\nonumber \lim_{m,n \to \infty} a_{n+1} + ... + a_m = 0
+\end{equation}
+
+ou seja, ele diz que para que uma sequência seja somável, ela deve se aproximar de $0$
+quanto mais $ n\to \infty$.
+
+Como dito, este é um critério mais teórico, sendo que a primeira condição prática para 
+que ele ocorra é dado pela condição de desaparecimento (vanishing condition). Que diz
+se $\{a_n\}$ é somável, então 
 
 
+\begin{equation}
+	\nonumber \lim_{n \to \infty } a_n = 0.
+\end{equation}
+
+Apesar de ser um bom critério inicial, algumas sequencias como a sequencia
+
+\begin{equation}
+	\nonumber s_n = 1 + 1/2 + 1/3 + 1/4 + .... + 1/n
+\end{equation}
 
 
+falham frente a ele. O que parece curioso numa primeira inspeção, já que 
+\begin{equation}
+	\nonumber \lim_{n \to \infty } 1/n = 0
+\end{equation}
+
+embora exista uma maneira de se somar esta sequência (agrupando esta em termos que somam $> 1/2$)
+fazendo com que ela não seja somável. 
+
+Sendo assim, faz-se necessário introduzir outros critérios para que se 
+avalie a convergência de séries. Ao longo do restante do resumo deste capítulo, estes
+critérios serão elencados. O primeiro deles é chamado de critério
+de delimitação (boundedness criterion). Este critério diz que uma sequência não negativa (isto é,
+$a_n \geq 0 $, que faz com que $s_n$ seja claramente não-decrescente) é somável se e somente se
+suas somas parciais $s_n$ são limitadas.
+
+Embora este critério não ajude muito no sentido de que de certa forma continuamos no escuro
+(ainda não sabemos avaliar se uma série é ou não limitada), se temos alguma outra série auxiliar 
+podemos então avaliar outras séries. Isto é evidenciado pelo teorema 1, que diz que:
+
+Se $0 \leq a_n \leq b_n\ \forall \ n$ então se
+
+
+\begin{equation}
+	\nonumber \sum_{n=1}^{\infty}b_n\  \text{converge então } \sum_{n=1}^{\infty} a_n \text{ converge} 
+\end{equation}
+
+Este critério faz com que diversas expressões complicadas possam ser avaliadas mais facilmente,
+uma vez que funções como seno e cosseno com $n \to \infty$ ainda são limitadas ao intervalo $ -1 \leq x \leq 1$ 
+e portanto são sempre $\leq$ a uma série análoga sem a presença destas funções.
+
+Um outro teste similar a este, no sentido de que a partir de uma série convergente pode-se 
+obter outras séries também convergentes, é o teste da comparação do limite (limit comparison teste)
+
+Este teste, enunciado como teorema 2, diz que se $a_n,b_n > 0$ e $\lim_{n \to \infty} a_n/b_n = c$, 
+então $\sum_{n=1}^{\infty}a_n$ converge se e somente se $\sum_{n=1}^{\infty}b_n$ converge.
+
+Este teorema implica em um dos testes mais importantes para se avaliar a convergência de sérioes, que
+é o teste da razão:
+
+Seja $a_n > 0 \ \forall \ n$, e suponha que 
+
+\begin{equation}
+ \nonumber \lim_{n\to\infty} \frac{a_{n+1}}{a_n} = r
+\end{equation}
+
+então, se $r < 1$ a série é convergente, se $r>1$ a série é divergente e se $r=1$ o teste
+é inconclusivo.
+
+Este teste é muito interessante, pois se for possível avaliar $ \lim_{n\to\infty} \frac{a_{n+1}}{a_n} $
+temos um critério que depende apenas da proprio comportamento da série para se avaliar sua 
+convergência (assim como o critério de Cauchy, apesar de este parecer ser mais poderoso). Entretanto, muitas vezes é dificil de se avaliar $ \lim_{n\to\infty} \frac{a_{n+1}}{a_n} $,
+bem como este pode ser $=1$, o que é inconclusivo (a série pode ser tanto convergente como divergente).
+
+Embora estes critérios todos tenham limitações, pode-se perceber que já começamos a criar um
+arsenal de critérios para se avaliar séries, podendo se escolher um a depender do que é mais fácil de se
+avaliar. O próximo critério apresentado (o teste da integral, teorema 4) adiciona mais um 
+critério a este arsenal.
+
+O teorema 4 supõe uma função $f$ positiva e decrescente em $[1,\infty)$, sendo $f(n) = a_n \ \forall \ n$.
+Então, $\sum a_n$ converge se e somente se o limite
+
+\begin{equation}
+ \nonumber \int_1^{\infty} f = \lim_{A \to \infty}\int_{1}^A f
+\end{equation}
+
+existe. O poder deste teste é demonstrado pelo Spivak ao se demonstrar a convergência para a série
+
+\begin{equation}
+ \nonumber \sum_{i=1}^{\infty} \frac{1}{n^p}
+\end{equation}
+
+Onde se $p>0$ a série converge, o que resulta na convergência de uma infinidade de séries 
+(apenas variando $p$).
+
+Até o presente momento, apenas lidamos com séries que tinham valores unicamente positivos,
+o que acaba resultando que também sabemos lidar com séries que tenham todos os seus termos $\leq 0$
+, já que
+
+\begin{equation}
+ \nonumber \sum_{i=1}^{\infty} a_n = -(\sum_{i=1}^{\infty} - a_n )
+\end{equation}
+
+ou seja, podemos tratar de séries que contenham termos negativos de maneira análoga as séries
+positivas que vinhamos tratando.
+
+Entretanto, diversas vezes podemos ter séries que tem tanto termos negativos como positivos, 
+como exemplificado pelo polinômio de Taylor para a função $sen(x)$ com $a=0$. Para um primeiro tratamento
+para estes casos, poderiamos pensar em análisar $|a_n|$.
+
+Para isso, é interessante primeiro definir o que é uma série \textbf{absolutamente convergente}:
+
+Uma série $\sum a_n$ é \textbf{absolutamente convergente} se a série $\sum |a_n|$ é convergente.
+
+Apesar de que esta definição parecer ter pouca utilidade, ela acaba sendo muito poderosa, como
+mostrado no teorema 5. Neste teorema, é demonstrado que se uma série $\sum a_n$ é absolutamente convergente
+($\sum |a_n|$ converge), então a série $\sum a_n$ é convergente.
+
+Ou seja, a partir de uma série convergente com termos não-negativos, pode-se obter infinitas outras séries
+apenas se inserindo sinais negativos aleatoriamente. Este resultado também leva ao teorema 6, que é chamado
+de teorema de Leibniz, onde, supondo uma sequência $\{a_n\}$ não-negativa e considerando que
+
+\begin{equation}
+ \nonumber \lim_{n\to\infty} a_n = 0
+\end{equation}
+
+então a série
+
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty (-1)^{n+1}a_n = a_1 - a_2 + a_3 + ... 
+\end{equation}
+
+converge. 
+
+A partir do teorema 6, é mostrado como a série
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty (-1)^{n+1} \frac{1}{n}
+\end{equation}
+
+é convergente, apesar de não ser absolutamente convergente. Tais séries são chamadas de 
+condicionalmente convergentes. Através desta série, o Spivak introduz um absurdo ao manipular
+esta como se fosse uma soma finita, e não infinita. 
+
+Além do exemplo fornecido pelo Spivak, em sala de aula também vimos outros exemplos que 
+exemplificam este absurdo. Como a atribuição de que
+
+\begin{equation}
+ \nonumber -1 + 1 -1 + 1 - 1 + 1 ... = 1/2
+\end{equation}
+
+ou que 
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty n = -1/12
+\end{equation}
+
+Para provar que isto não pode ser realizado para qualquer série, é apresentado o teorema 7,
+que indica que só é possível se realizar uma manipulaçào dos termos de uma série como se esta
+fosse uma soma finita, caso esta série seja absolutamente convergente. O teorema 7 diz que:
+
+Se $\sum a_n$ converge mas não converge absolutamente, então $\forall \alpha$ existe um rearrange
+de $\{a_n\}$, $\{b_n\}$, t.q.
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty b_n = \alpha
+\end{equation}
+
+Com este teorema, mostramos que manipulando uma série que não é absolutamente convergente
+podemos chegar em qualquer valor desejado, apenas realizando as manipulações ``corretas''. 
+Ao unirmos o teorema 7 acima com o teorema 8, conseguimos então caracterizar quando podemos 
+realizar uma manipulação de séries como se estas fossem somas finitas.
+
+O teorema 8 diz que se $\sum a_n$ converge absolutamente, então qualquer rearrango
+de $\{a_n\}$, $\{b_n\}$ também converge e 
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty a_n = \sum_{i=1}^\infty b_n 
+\end{equation}
+
+Aqui podemos ver como é importante a caracterização de uma série absolutamente convergente,
+embora em um primeiro momento ao se analisar a definição se parecia de que esta não seria tão util,
+como se estivessemos perdendo informação sobre a série ao se fazer esta análise.
+
+Entretanto, percebe-se que esta característica influência significativamente no comportamento de uma série
+e de que manipulações são possíveis se realizar com esta.
+
+Outro ponto em que esta característica se mostra fundamental é quando queremos somar ou multiplicar
+séries infinitas, sendo que a relação
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty a_n + \sum_{i=1}^\infty b_n  = \sum_{i=1}^\infty (a_n + b_n)  
+\end{equation}
+
+Só vale caso $\sum a_n$ e $\sum b_n$ sejam séries absolutamente convergentes. Outro caso em que isto
+se mostra necessário é no teorema 9, onde se $\sum a_n$ e $\sum b_n$ convergem absolutamente e $\{c_n\}$
+é uma sequência que contem todos os pares $a_ib_j$ então
+
+\begin{equation}
+ \nonumber \sum_{i=1}^\infty c_n = \sum_{i=1}^\infty a_n \cdot \sum_{i=1}^\infty b_n  
+\end{equation}
 
 \newpage
 \section{Convergência uniforme e séries de potência}
+
+
+% \begin{equation}
+	% \nonumber
+% \end{equation}
 
 \newpage
 
