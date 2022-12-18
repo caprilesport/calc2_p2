@@ -345,7 +345,7 @@ Tendo como série (análisando as somas parciais):
 \end{align*}
 
 Para computarmos a soma de uma série, faz sentido olharmos o que ocorre para a soma parcial
-$\{s_n\}$, assim como fizemos para o exemplo acimadefinida da seguinte maneira:
+$\{s_n\}$, assim como fizemos para o exemplo acima definido da seguinte maneira:
 
 \begin{equation}
 	\nonumber s_n = \sum_{i=1}^{n} a_i
@@ -450,7 +450,7 @@ Então, $\sum a_n$ converge se e somente se o limite
 existe. O poder deste teste é demonstrado pelo Spivak ao se demonstrar a convergência para a série
 
 \begin{equation}
- \nonumber \sum_{i=1}^{\infty} \frac{1}{n^p}
+ \nonumber \sum_{n=1}^{\infty} \frac{1}{n^p}
 \end{equation}
 
 Onde se $p>0$ a série converge, o que resulta na convergência de uma infinidade de séries 
@@ -461,7 +461,7 @@ o que acaba resultando que também sabemos lidar com séries que tenham todos os
 , já que
 
 \begin{equation}
- \nonumber \sum_{i=1}^{\infty} a_n = -(\sum_{i=1}^{\infty} - a_n )
+ \nonumber \sum_{n=1}^{\infty} a_n = -(\sum_{n=1}^{\infty} - a_n )
 \end{equation}
 
 ou seja, podemos tratar de séries que contenham termos negativos de maneira análoga as séries
@@ -491,7 +491,7 @@ então a série
 
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty (-1)^{n+1}a_n = a_1 - a_2 + a_3 + ... 
+ \nonumber \sum_{n=1}^\infty (-1)^{n+1}a_n = a_1 - a_2 + a_3 + ... 
 \end{equation}
 
 converge. 
@@ -499,7 +499,7 @@ converge.
 A partir do teorema 6, é mostrado como a série
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty (-1)^{n+1} \frac{1}{n}
+ \nonumber \sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n}
 \end{equation}
 
 é convergente, apesar de não ser absolutamente convergente. Tais séries são chamadas de 
@@ -516,7 +516,7 @@ exemplificam este absurdo. Como a atribuição de que
 ou que 
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty n = -1/12
+ \nonumber \sum_{n=1}^\infty n = -1/12
 \end{equation}
 
 Para provar que isto não pode ser realizado para qualquer série, é apresentado o teorema 7,
@@ -527,7 +527,7 @@ Se $\sum a_n$ converge mas não converge absolutamente, então $\forall \alpha$ 
 de $\{a_n\}$, $\{b_n\}$, t.q.
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty b_n = \alpha
+ \nonumber \sum_{n=1}^\infty b_n = \alpha
 \end{equation}
 
 Com este teorema, mostramos que manipulando uma série que não é absolutamente convergente
@@ -539,7 +539,7 @@ O teorema 8 diz que se $\sum a_n$ converge absolutamente, então qualquer rearra
 de $\{a_n\}$, $\{b_n\}$ também converge e 
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty a_n = \sum_{i=1}^\infty b_n 
+ \nonumber \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty b_n 
 \end{equation}
 
 Aqui podemos ver como é importante a caracterização de uma série absolutamente convergente,
@@ -553,7 +553,7 @@ Outro ponto em que esta característica se mostra fundamental é quando queremos
 séries infinitas, sendo que a relação
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty a_n + \sum_{i=1}^\infty b_n  = \sum_{i=1}^\infty (a_n + b_n)  
+ \nonumber \sum_{n=1}^\infty a_n + \sum_{n=1}^\infty b_n  = \sum_{n=1}^\infty (a_n + b_n)  
 \end{equation}
 
 Só vale caso $\sum a_n$ e $\sum b_n$ sejam séries absolutamente convergentes. Outro caso em que isto
@@ -561,7 +561,7 @@ se mostra necessário é no teorema 9, onde se $\sum a_n$ e $\sum b_n$ convergem
 é uma sequência que contem todos os pares $a_ib_j$ então
 
 \begin{equation}
- \nonumber \sum_{i=1}^\infty c_n = \sum_{i=1}^\infty a_n \cdot \sum_{i=1}^\infty b_n  
+ \nonumber \sum_{n=1}^\infty c_n = \sum_{n=1}^\infty a_n \cdot \sum_{n=1}^\infty b_n  
 \end{equation}
 
 \newpage
@@ -726,7 +726,7 @@ Agora estamos em posição de conseguir fazer várias manipulações com nossas 
 supondo duas séries de potência convergentes, temos que 
 
 \begin{equation}
-	\nonumber \sum_{n=1}^\infty a_n x^n + \sum_{n=1}^\infty b_n x^n  = \sum_{n=1}^\infty (a_n + b_n) x^n 
+	\nonumber \sum_{n=0}^\infty a_n x^n + \sum_{n=0}^\infty b_n x^n  = \sum_{n=0}^\infty (a_n + b_n) x^n 
 \end{equation}
 
 e assim como para soma de séries de potências, também podemos facilmente lidar com o produto destas.
