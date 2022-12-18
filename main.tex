@@ -22,7 +22,7 @@
 		\large{Departamento de Matemática}\\
 		\vspace{15pt}
 		\vspace{95pt}
-		\textbf{\LARGE{Prova 2 e Lista de exercícios - H-Calculo II }}\\
+		\textbf{\LARGE{Prova 2 - H-Calculo II }}\\
 		%\title{{\large{Título}}}
 		\vspace{3,5cm}
 	\end{center}
@@ -30,7 +30,7 @@
 	\begin{flushleft}
 		\begin{tabbing}
 			Aluno:  Vinícius Capriles Port\\
-			Professor: Marianna Ravara Vago\\
+			Professora: Marianna Ravara Vago\\
 		\end{tabbing}
 	\end{flushleft}
 	\vspace{1cm}
@@ -567,39 +567,187 @@ se mostra necessário é no teorema 9, onde se $\sum a_n$ e $\sum b_n$ convergem
 \newpage
 \section{Convergência uniforme e séries de potência}
 
+O capitulo 24 se inicia mostrando a idéia geral do objeto de estudo deste, ao invés de 
+trabalharmos com a soma de sequências infinitas, vamos lidar agora com funções definidas
+pela adição de infinitas funções que dependem de $x$, como no exemplo abaixo:
 
-% \begin{equation}
-	% \nonumber
-% \end{equation}
+\begin{equation}
+	\nonumber e^x = 1 + x/1! + x^2/2! + ...
+\end{equation}
+
+Ou seja,
+
+\begin{equation}
+	\nonumber f(x) = f_1(x) + f_2(x) + ...
+\end{equation}
+
+Onde definimos uma sequência de funções $s_n$ como
+
+\begin{equation}
+	\nonumber s_n = f_1 + f_2 + ... + f_n
+\end{equation}
+
+Onde expressamos $f(x)$ como o seguinte limite:
+
+\begin{equation}
+	\nonumber f(x) = \lim_{n \to \infty} f_n(x)
+\end{equation}
+
+O spivak resume muito bem a expectividade ao se chegar neste capitulo, dada todas as coisas
+que aprendemos sobre séries no capítulo passado, tudo que achavamos que seria verdade não é. (há)
+E assim, ele inicia o capítulo introduzindo uma série de contra-exemplos pra entendermos quais critérios
+são necessários para avaliar este tipo de função.
+
+O primeiro exemplo envolve a soma de funções continuas para fornecer uma função não-contínua 
+ao final. Ou seja, enquanto $f_1, f_2, ... f_n$ são todas funções contínuas, $\lim f_n$ não é
+contínua. Em seguida ele mostra como funções diferenciaveis (!) podem ser combinadas para fornecer
+uma função não-contínua.
+
+Em seguida, é apresentado um caso ainda mais bizarro, onde uma combinações de funções não contínuas
+(e extremamente erráticas - estas variam enormemente próximas a $0$) geram uma função contínua quando
+avaliamos $\lim_{n \to \infty} f_n(x)$.
+
+Para conseguirmos um critério com que faça com que estas sequências de funções se adequem a 
+uma análise, precisamos definir o que é uma convergência uniforme de $f_n$ para $f$ em $A$ 
+(ou dizemos que $f_n$ se aproxima uniformemente de $f$ em $A$). Esta definição se assemelha a de 
+limites de uma certa maneira, onde para qualquer $\epsilon >0$ existe um $N$ t.q. para todo
+$x$ em $A$:
+
+\begin{equation}
+	\nonumber se \ n > N \text{, então } |f(x) - f_n(x)| < \epsilon
+\end{equation} 
+
+A partid dessa definição, podemos então enunciar o teorema 1, que fala sobre o comportamente das 
+integrais de $f_n$.
+
+Se uma sequência de funções $\{f_n\}$ é integrável em $[a,b]$ e $\{f_n\}$ converge uniformemente para
+$f$ em $[a,b]$, e se $f$ é também integrável em $[a,b]$ então
+
+\begin{equation}
+	\nonumber \int_a^b f = \lim_{n\to\infty} \int_a^b f_n
+\end{equation}
+
+Da mesma maneira que podemos tratar a integração desta sequência de funções, também podemos tratasr
+de maneira similar a continuidade destas (teorema 2) caso $\{f_n\}$ converja para f em $[a,b]$.
+
+Embora os teoremas 1 e 2 tratem com sucesso de integração e continuidade caso $\{f_n\}$ converja
+para $f$ em um intervalo, a diferenciabilidade não obtém o mesmo sucesso imediatamente.
+Entretanto, caso adicionemos uma hipótese, não dizendo apenas que $\{f_n\}$ converja
+para $f$ em um intervalo, mas exigindo também que $\{f_n'\}$ converja uniformemente para $f'$, 
+conseguimos ter uma relação. (teorema 3)
+
+Estes 3 teoremas formam a base para o tratamento de sequências de funções, sendo que apenas nos
+interessamos por funções que converjam uniformemente (sendo esta convergência definida no coralário 1)
+, ou seja, tenham sua continuidade, integração e diferenciabilidade bem definidos (com todas as hipóteses que acompanham estas propriedades)
+.
+
+Agora, mesmo tendo um critério bem definido para sequências de funções ``bem comportadas'', ainda não 
+sabemos avaliar quando tal sequência de fato é uniformemente convergente. Para isso, é então apresentada
+o teste M de Weierstrass. 
+
+Seja $\{f_n\}$ uma sequência de funções definida em $A$ e suponha que $\{M_n\}$ é uma sequência de números
+tal que 
+
+\begin{equation}
+	\nonumber |f_n(x) | \leq M_n
+\end{equation}
+
+suponha ainda que a série
+
+\begin{equation}
+	\nonumber \sum_{n=1}^\infty M_n
+\end{equation}
+
+converge. Então, para cada $x$ em $A$ a série
+
+\begin{equation}
+	\nonumber \sum_{n=1}^\infty f_n(x)
+\end{equation}
+
+também converge absolutamente e converge uniformemente para $f(x)$ em $A$.
+
+Com este teste, podemos agora analisar uma função que quando estavamos falando de diferenciabilidade 
+e continuidade, não tinhamos ainda o ferramentário para analisar com cuidado.
+
+No teorema 5, o Spivak mostra que a função
+
+\begin{equation}
+	\nonumber f(x) = \sum_{n=1}^\infty \frac{1}{10^n}\{10^nx\}
+\end{equation}
+
+é continua $\forall x$ porém não é diferenciável para nenhum $x$!
+
+Com esse teste, fica muito mais simples se analisar funções bem comportadas, como funções polinomiais.
+
+Sendo assim, já que tinhamos uma maneira de gerar séries de funções através dos polinômios de 
+Taylor, faz sentido que agora nos atentemos a analisar este tipo de série.
+
+Séries infinitas para os polinômios de Taylor podem ser descritas pela equação
+
+\begin{equation}
+	\nonumber \sum_{n=0}^\infty f_n(x) = \sum_{n=0}^\infty a_n(x-a)^n
+\end{equation}
+
+Sendo estas funções $f_n$ chamadas de séries de potência centradas em $a$. Pela simplicidade,
+(e assim como no capítulo dos polinômios de Taylor), vamos apenas analisar séries de potências
+centradas em $0$.
+
+Primeiramente é importante análisar que, assim como visto no capítulo 20, nem sempre será verdade que
+
+\begin{equation}
+	\nonumber f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n
+\end{equation}
+
+, para isso necessitamos que $\lim_{n\to\infty}R_{n,a}(x) = 0$,
+porém, se uma série de potências de fato converge para uma determinada função dentro de um intervalo
+$A$, podemos dizer muito sobre esta série.
+
+Neste momento entramos no teorema 6, que diz que se uma série
+
+\begin{equation}
+	\nonumber f(x_0) = \sum_{n=0}^\infty a_n x_0^n
+\end{equation}
+
+converge, e sendo $a$ um número t.q. $0 < a < |x_0|$, então no intervalo $[-a,a]$ a série
+
+\begin{equation}
+	\nonumber f(x) = \sum_{n=0}^\infty a_n x^n
+\end{equation}
+
+converge absolutamente, resultando também que a série
+
+\begin{equation}
+	\nonumber g(x) = \sum_{n=1}^\infty n a_n x^{(n - 1)}
+\end{equation}
+
+também converge absolutamente, sendo ainda que $f$ é diferenciável e $f'(x) = g(x)$.
+
+Agora estamos em posição de conseguir fazer várias manipulações com nossas séries de potência, como por exemplo.
+supondo duas séries de potência convergentes, temos que 
+
+\begin{equation}
+	\nonumber \sum_{n=1}^\infty a_n x^n + \sum_{n=1}^\infty b_n x^n  = \sum_{n=1}^\infty (a_n + b_n) x^n 
+\end{equation}
+
+e assim como para soma de séries de potências, também podemos facilmente lidar com o produto destas.
+Além disso, aplicando o teorema 6 para as funções $sen(x), cos(x)$ e  $e^x$, obtemos séries
+de potência definidas e convergentes. Já para algumas outras funções, como $log(1+x)$ e $arctan(x)$, não
+obtemos um comportamento tão bem ``comportado''. 
+
+Assim como suas primeiras derivadas são bem definidas (para as funções sen, cos e exponencial),
+também é apresentado como suas $k$ derivadas são bem definidas e todas as séries convergem.
+Ou seja, temos em mãos uma ferramenta para aproximar as k-ésimas derivadas das funções acima
+citadas.
+
+Em suma, ao final deste capítulo conseguimos desenvolver o ferramentário para analisar os 
+polinômios de Taylor como séries infinitas, onde as funções $sen,cos,e^x$  se comportam
+tão bem como gostariamos, convergindo para $\forall x$, sendo diferenciável termo a termo.
+Ainda assim, para algumas funções ainda não temos o ferramentário necessário para tirar 
+muitas conclusões. Por exemplo a função $arctan(x)$, ainda necessita da introdução de números 
+complexos para que possamos responder a questões mais profundas sobre esta série de potências.
+
+
 
 \newpage
-
-\section{Exercicios Cap. 20}
-
-1 - IV
-
-10 - (a)
-
-
-(b)
-
-13
-
-\newpage
-\section{Exercicios Cap. 22}
-
-1 (iv), 4, 20
-
-\newpage
-
-\section{Exercicios Cap. 23}
-
-1 (ii, iv, viii, xx), 15
-
-\newpage
-
-\section{Exercicios Cap. 24}
-
-4, 6, 14
 
 \end{document}
